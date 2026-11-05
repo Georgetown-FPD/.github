@@ -1,0 +1,32 @@
+name: Change request
+description: Plan a change to a station network, phones, cameras or accounts
+labels: [change]
+body:
+  - type: dropdown
+    id: station
+    attributes: {label: Station, options: ["Station 61", "Station 62", "Station 64", "District-wide"]}
+    validations: {required: true}
+  - type: textarea
+    id: what
+    attributes: {label: What will change, description: Devices, settings, VLANs, Wi-Fi, firewall, accounts}
+    validations: {required: true}
+  - type: textarea
+    id: why
+    attributes: {label: Why}
+    validations: {required: true}
+  - type: textarea
+    id: impact
+    attributes: {label: Impact and timing, description: "Who/what is affected (phones? 911 call box? cameras?), planned window"}
+    validations: {required: true}
+  - type: textarea
+    id: rollback
+    attributes: {label: Rollback plan}
+    validations: {required: true}
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: Config snapshot taken before the change
+        - label: 911 call box tested after the change (if the station network was touched)
+        - label: CHANGELOG.md updated and post-change snapshot committed

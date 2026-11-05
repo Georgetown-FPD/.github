@@ -1,0 +1,15 @@
+name: New device or user
+description: Add a device, account or access for someone
+labels: [onboarding]
+body:
+  - type: dropdown
+    id: kind
+    attributes: {label: Type, options: ["New staff member", "Departing staff member", "New device", "Retire device"]}
+    validations: {required: true}
+  - type: dropdown
+    id: station
+    attributes: {label: Station, options: ["Station 61", "Station 62", "Station 64", "District-wide"]}
+  - type: textarea
+    id: details
+    attributes: {label: Details, description: "Name / role / start or end date, or device model and location. No passwords here."}
+    validations: {required: true}

@@ -1,0 +1,19 @@
+name: Outage or incident
+description: Something is down or behaving badly
+labels: [incident]
+body:
+  - type: dropdown
+    id: station
+    attributes: {label: Station, options: ["Station 61", "Station 62", "Station 64", "District-wide"]}
+    validations: {required: true}
+  - type: dropdown
+    id: severity
+    attributes: {label: Severity, options: ["Critical: 911 call box, alerting or phones down", "High: internet or Wi-Fi down", "Medium: one device or user affected", "Low: annoyance"]}
+    validations: {required: true}
+  - type: textarea
+    id: what
+    attributes: {label: What happened, description: "What is broken, since when, what was tried"}
+    validations: {required: true}
+  - type: textarea
+    id: resolution
+    attributes: {label: Resolution (fill in when closed)}
